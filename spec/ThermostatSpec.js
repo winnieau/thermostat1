@@ -14,6 +14,25 @@ describe("Thermostat", function() {
     expect(thermostat.temperature).toEqual(21);
   });
 
+  it("should decrease the temperature by 1", function() {
+    thermostat.lower();
+    expect(thermostat.temperature).toEqual(19);
+  });
+
+  it ("should not decrease below 10 degrees", function() {
+    for(i=0; i<11; i++) {
+      thermostat.lower();
+    };
+    expect(thermostat.temperature).toEqual(10);
+  });
+
+  it("should not increase more than 25 when power saving mode is on", function() {
+    for(i=0; i<6; i++) {
+      thermostat.raise();
+    };
+    expect(thermostat.temperature).toEqual(25);
+  });
+
   // it("should be able to play a Song", function() {
   //   player.play(song);
   //   expect(player.currentlyPlayingSong).toEqual(song);

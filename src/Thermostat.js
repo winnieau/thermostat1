@@ -2,10 +2,15 @@ function Thermostat() {
   this.temperature = 20;
 }
 
-// Thermostat.prototype.temperature = function() {
-//   return this.temperature;
-// };
+Thermostat.prototype.raise = function() {
+  this.temperature++;
+};
 
+Thermostat.prototype.lower = function() {
+  if(this.temperature > 10) {
+    this.temperature--;
+  }
+};
 
 
 // Player.prototype.play = function(song) {
