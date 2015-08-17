@@ -55,5 +55,12 @@ describe("Thermostat", function() {
     expect(thermostat.temperature).toEqual(20);
   });
 
-
+  
+  // it("should display green if temp is less than 18"), function() {
+  //   for(i=0; i<3; i++) {
+  //     thermostat.lower();
+  //   };
+  //   thermostat.energyStatus();
+  //   expect(thermostat.displayColor).toEqual('green');
+  // });
 });
