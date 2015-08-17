@@ -33,6 +33,15 @@ describe("Thermostat", function() {
     expect(thermostat.temperature).toEqual(25);
   });
 
+  it("should have the power saving mode on by default", function() {
+    expect(thermostat.powerSavingMode).toEqual(true);
+  });
+
+  it("should be able to turn off power saving mode", function() {
+    thermostat.powerSaveOff();
+    expect(thermostat.powerSavingMode).toEqual(false);
+  });
+
   // it("should be able to play a Song", function() {
   //   player.play(song);
   //   expect(player.currentlyPlayingSong).toEqual(song);
