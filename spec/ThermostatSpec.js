@@ -55,12 +55,28 @@ describe("Thermostat", function() {
     expect(thermostat.temperature).toEqual(20);
   });
 
-  
-  // it("should display green if temp is less than 18"), function() {
-  //   for(i=0; i<3; i++) {
-  //     thermostat.lower();
-  //   };
-  //   thermostat.energyStatus();
-  //   expect(thermostat.displayColor).toEqual('green');
-  // });
+
+  it("should display green if temp is lower than 18", function() {
+    for(i=0; i<3; i++) {
+      thermostat.lower();
+    };
+    thermostat.energyStatus();
+    expect(thermostat.displayColor).toEqual('green');
+  });
+
+  it("should display yellow if temp is lower than 25", function() {
+    for(i=0; i<4; i++) {
+      thermostat.raise();
+    };
+    thermostat.energyStatus();
+    expect(thermostat.displayColor).toEqual('yellow');
+  });
+
+  it("should display red if temp is higher than 24", function() {
+    for(i=0; i<5; i++) {
+      thermostat.raise();
+    };
+    thermostat.energyStatus();
+    expect(thermostat.displayColor).toEqual('red');
+  });
 });
